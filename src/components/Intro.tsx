@@ -4,7 +4,12 @@ import WelcomeSVG from "../assets/welcomeLine.svg";
 export default function Intro() {
   return (
     <Box>
-      <Flex direction={"column"} align={"center"} gapY={"5"}>
+      <Flex
+        direction={"column"}
+        align={"center"}
+        gapY={"5"}
+        mt={{ initial: "50%", md: "0%" }}
+      >
         <Text size={"7"} weight={"bold"}>
           Hi, I'm Neema.
         </Text>

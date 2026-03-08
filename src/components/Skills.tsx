@@ -30,7 +30,9 @@ export default function Skills() {
             <Box
               p={"2"}
               style={{
-                border: "1px solid red",
+                border: "1px solid",
+                borderImage:
+                  "linear-gradient(135deg, #7c3aed, #ec4899, #f59e0b) 1",
                 borderRadius: "var(--radius-6)",
               }}
             >

@@ -6,6 +6,7 @@ import RaraSVG from "../assets/raralabs_logo.jpg";
 import BasiyoSVG from "../assets/basiyo_logo.png";
 import CodavatarSVG from "../assets/codavatar_logo.jpg";
 import PromotySVG from "../assets/promoty_logo.jpg";
+import HouzzSVG from "../assets/houzz_logo.jpg";
 import CompanyHistory from "./CompanyHistory.tsx";
 
 export default function Employment() {
@@ -63,13 +64,13 @@ export default function Employment() {
         />
       </Grid>
 
-      {/*Houzz*/}
       <img src={StraightLineSVG} alt="Straight Line" />
       <CompanyHistory
         name={"Houzz"}
         from={"September, 2019"}
         to={"June, 2021"}
         textFirst={false}
+        logo={HouzzSVG}
       />
     </Flex>
   );

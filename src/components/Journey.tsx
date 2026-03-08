@@ -7,7 +7,7 @@ export default function Journey() {
       <Heading size={"7"} weight={"bold"}>
         My Software Journey
       </Heading>
-      <Grid columns={"3"} my={"5"}>
+      <Grid columns="1fr 100px 1fr" my={"5"}>
         <Text>I started my career studying computer engineering at IOE</Text>
         <img
           style={{ marginTop: "12px", marginBottom: "36px" }}
