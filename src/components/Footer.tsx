@@ -59,17 +59,34 @@ export default function Footer() {
             LinkedIn
           </Link>
         </Flex>
-        <Text
-          as="p"
-          className="muted"
-          style={{ margin: 0, fontSize: "0.85rem" }}
-        >
-          Made with{" "}
-          <span className="heart-pulse" aria-hidden="true">
-            🩵
-          </span>{" "}
-          in React
-        </Text>
+        <Flex direction="column" align="center" gap="1">
+          <Text
+            as="p"
+            className="muted"
+            style={{ margin: 0, fontSize: "0.85rem" }}
+          >
+            Made with{" "}
+            <span className="heart-pulse" aria-hidden="true">
+              🩵
+            </span>{" "}
+            in React
+          </Text>
+          <Text
+            as="p"
+            className="muted"
+            style={{ margin: 0, fontSize: "0.85rem" }}
+          >
+            Design inspired by{" "}
+            <Link
+              href="https://www.figma.com/design/RKpttwSF2FtZ45BnP5TMCo/Portfolio-Template--Community-?node-id=0-1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Portfolio Template
+            </Link>{" "}
+            on Figma Community
+          </Text>
+        </Flex>
       </footer>
     </Flex>
   );
