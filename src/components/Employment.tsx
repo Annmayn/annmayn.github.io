@@ -35,7 +35,7 @@ export default function Employment() {
         justify="center"
         style={{ marginTop: 0, marginBottom: "1.25rem" }}
       >
-        <img src={Line3SVG} alt="" width={120} />
+        <img className="connector-arrow" src={Line3SVG} alt="" width={120} />
       </Flex>
       <div className="timeline">
         {experience.map((job, index) => {
@@ -91,7 +91,7 @@ export default function Employment() {
                   className={`timeline-connector${reverse ? " timeline-connector--start" : " timeline-connector--end"}`}
                   aria-hidden="true"
                 >
-                  <img src={connectorLine} alt="" />
+                  <img className="connector-arrow" src={connectorLine} alt="" />
                 </div>
               )}
             </Fragment>

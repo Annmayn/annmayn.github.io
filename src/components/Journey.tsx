@@ -32,7 +32,7 @@ export default function Journey() {
         ))}
       </Flex>
       <Flex className="connector" justify="center">
-        <img src={Line2SVG} alt="" width={100} />
+        <img className="connector-arrow" src={Line2SVG} alt="" width={100} />
       </Flex>
     </Section>
   );

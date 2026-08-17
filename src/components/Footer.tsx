@@ -49,7 +49,7 @@ export default function Footer() {
           </Grid>
         </Section>
 
-        <img width={200} src={WelcomeSVG} alt="" />
+        <img className="connector-arrow" width={200} src={WelcomeSVG} alt="" />
         <Flex className="footer-links" wrap="wrap" gap="4" justify="center">
           <Link href={`mailto:${profile.email}`}>{profile.email}</Link>
           <Link href={profile.github} target="_blank" rel="noreferrer">
@@ -64,7 +64,11 @@ export default function Footer() {
           className="muted"
           style={{ margin: 0, fontSize: "0.85rem" }}
         >
-          Made with 🩵 in React
+          Made with{" "}
+          <span className="heart-pulse" aria-hidden="true">
+            🩵
+          </span>{" "}
+          in React
         </Text>
       </footer>
     </Flex>

@@ -17,7 +17,8 @@ export default function Skills() {
           {skills.map((skill) => (
             <Box
               key={skill}
-              p="2"
+              px="4"
+              py="2"
               style={{
                 border: "1px solid transparent",
                 borderRadius: "var(--radius-6)",
@@ -38,6 +39,7 @@ export default function Skills() {
           ))}
         </Flex>
         <img
+          className="connector-arrow"
           style={{ marginTop: "12px", marginBottom: "36px" }}
           width={100}
           src={Line1SVG}

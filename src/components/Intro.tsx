@@ -37,6 +37,7 @@ export default function Intro() {
           A {profile.title}.
         </Text>
         <img
+          className="connector-arrow"
           style={{ marginTop: "12px", marginBottom: "36px" }}
           height="50px"
           src={WelcomeSVG}
