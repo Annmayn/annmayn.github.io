@@ -38,7 +38,13 @@ const visuals: Partial<
   logicurv: { src: logicurvVisual, alt: "Basiyo booking platform" },
 };
 
-const itemAccents = ["#a981fe", "#f47acb", "#7ec8ff", "#b8fe81", "#ff9b6a"];
+const logoColors: Record<string, string> = {
+  houzz: "#50b010",
+  raralabs: "#f04070",
+  codavatar: "#d00000",
+  promoty: "#f090e0",
+  logicurv: "#305070",
+};
 
 export default function Employment() {
   return (
@@ -69,7 +75,7 @@ export default function Employment() {
                 style={
                   {
                     "--item-index": index,
-                    "--item-accent": itemAccents[index % itemAccents.length],
+                    "--item-accent": logoColors[job.logo],
                   } as CSSProperties
                 }
               >

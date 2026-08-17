@@ -436,7 +436,7 @@ img {
 
 .timeline-years {
   font-size: 0.85rem;
-  color: color-mix(in srgb, var(--item-accent, var(--text-muted)) 75%, var(--text-muted));
+  color: var(--text-muted);
 }
 
 .timeline-content .role {
@@ -720,6 +720,10 @@ img {
     grid-template-areas: "content";
   }
 
+  .timeline {
+    flex-direction: column-reverse;
+  }
+
   .timeline-visual,
   .timeline-connector {
     display: none;
@@ -727,5 +731,9 @@ img {
 
   .app-shell > section {
     margin-top: 3.25rem;
+  }
+
+  .project-card.rt-Link:where(:active:not(:focus-visible)) {
+    outline: none;
   }
 }

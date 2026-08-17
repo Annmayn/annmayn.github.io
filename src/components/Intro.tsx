@@ -30,10 +30,10 @@ export default function Intro() {
             radius="full"
           />
         </Box>
-        <Text size="9" weight="bold">
+        <Text size="9" weight="bold" align="center">
           Hi, I'm {firstName}.
         </Text>
-        <Text size="8" weight="bold">
+        <Text size="8" weight="bold" align="center">
           A {profile.title}.
         </Text>
         <img
