@@ -22,18 +22,25 @@ export default function Journey() {
       >
         {profile.about}
       </Text>
-      <Flex className="journey-grid" direction="column" gap="4">
-        {journey.map((step) => (
+      <div className="journey-path">
+        {journey.map((step, index) => (
           <Box asChild key={step.text}>
-            <article className="journey-card">
+            <article
+              className={`journey-card ${index % 2 === 0 ? "journey-card--start" : "journey-card--end"}`}
+              style={{ gridRow: index + 1 }}
+            >
               <Text as="p">{step.text}</Text>
             </article>
           </Box>
         ))}
-      </Flex>
-      <Flex className="connector" justify="center">
-        <img className="connector-arrow" src={Line2SVG} alt="" width={100} />
-      </Flex>
+        <Flex
+          className="connector journey-connector"
+          justify="center"
+          style={{ gridRow: `1 / ${journey.length + 1}` }}
+        >
+          <img className="connector-arrow" src={Line2SVG} alt="" width={100} />
+        </Flex>
+      </div>
     </Section>
   );
 }
