@@ -1,22 +1,39 @@
-import { Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Box, Flex, Heading, Section, Text } from "@radix-ui/themes";
 import Line2SVG from "../assets/line2.svg";
+import { journey, profile } from "../data/portfolio";
 
 export default function Journey() {
   return (
-    <Flex direction={"column"} align={"center"}>
-      <Heading size={"7"} weight={"bold"}>
-        My Software Journey
+    <Section aria-labelledby="journey-title" size="1">
+      <Text as="p" className="section-label">
+        Path
+      </Text>
+      <Heading as="h2" id="journey-title" className="section-title">
+        My engineering journey
       </Heading>
-      <Grid columns="1fr 100px 1fr" my={"5"}>
-        <Text>I started my career studying computer engineering at IOE</Text>
-        <img
-          style={{ marginTop: "12px", marginBottom: "36px" }}
-          width={"100px"}
-          src={Line2SVG}
-          alt={"Skill to Journey Arrow"}
-        />
-        <Text>I did HackerRank</Text>
-      </Grid>
-    </Flex>
+      <Text
+        as="p"
+        className="muted"
+        style={{
+          marginTop: "-0.25rem",
+          marginBottom: "1.25rem",
+          maxWidth: "40rem",
+        }}
+      >
+        {profile.about}
+      </Text>
+      <Flex className="journey-grid" direction="column" gap="4">
+        {journey.map((step) => (
+          <Box asChild key={step.text}>
+            <article className="journey-card">
+              <Text as="p">{step.text}</Text>
+            </article>
+          </Box>
+        ))}
+      </Flex>
+      <Flex className="connector" justify="center">
+        <img src={Line2SVG} alt="" width={100} />
+      </Flex>
+    </Section>
   );
 }

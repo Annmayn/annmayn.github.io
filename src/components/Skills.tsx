@@ -1,52 +1,49 @@
-import { Box, Flex, Heading, Text } from "@radix-ui/themes";
+import { Box, Flex, Heading, Section, Text } from "@radix-ui/themes";
 import Line1SVG from "../assets/line1.svg";
+import { skills } from "../data/portfolio";
+
+const skillBorderGradient =
+  "linear-gradient(135deg, #a981fe, #dba6f4, #fbae96)";
+const skillTextGradient = "linear-gradient(90deg, #7ec8ff, #b8fe81, #f6e27a)";
 
 export default function Skills() {
-  const skills = [
-    "Python",
-    "Javascript",
-    "Typescript",
-    "Kotlin",
-    "Data Structures & Algorithm",
-    "PostgreSQL",
-    "Django",
-    "FastApi",
-    "React",
-  ];
   return (
-    <Box>
-      <Flex direction={"column"} align={"center"} gapY={"5"}>
-        <Heading size={"7"} weight={"bold"}>
+    <Section aria-labelledby="skills-title" size="1">
+      <Flex direction="column" align="center" gap="5">
+        <Heading as="h2" id="skills-title" size="7" weight="bold">
           Skills
         </Heading>
-        <Flex
-          justify={"center"}
-          direction={"row"}
-          wrap={"wrap"}
-          gapX={"5"}
-          gapY={"3"}
-        >
+        <Flex justify="center" wrap="wrap" gapX="5" gapY="3">
           {skills.map((skill) => (
             <Box
-              p={"2"}
+              key={skill}
+              p="2"
               style={{
-                border: "1px solid",
-                borderImage:
-                  "linear-gradient(135deg, #7c3aed, #ec4899, #f59e0b) 1",
+                border: "1px solid transparent",
                 borderRadius: "var(--radius-6)",
+                background: `linear-gradient(var(--bg), var(--bg)) padding-box, ${skillBorderGradient} border-box`,
               }}
             >
-              <Text>{skill}</Text>
+              <Text
+                style={{
+                  backgroundImage: skillTextGradient,
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                {skill}
+              </Text>
             </Box>
           ))}
         </Flex>
         <img
           style={{ marginTop: "12px", marginBottom: "36px" }}
-          width={"100px"}
+          width={100}
           src={Line1SVG}
-          alt={"Skill to Journey Arrow"}
+          alt="Skill to Journey Arrow"
         />
       </Flex>
-    </Box>
+    </Section>
   );
 }

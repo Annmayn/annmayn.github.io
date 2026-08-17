@@ -1,45 +1,34 @@
 import { Box, Dialog, Flex, Text, VisuallyHidden } from "@radix-ui/themes";
-import { useState } from "react";
 
 interface CertificateDetailProps {
   src: string;
   name: string;
 }
+
 export default function CertificateDetail({
   src,
   name,
 }: CertificateDetailProps) {
-  const [showDetail, setShowDetail] = useState(false);
   return (
     <Box>
-      <Dialog.Root onOpenChange={() => setShowDetail(!showDetail)}>
+      <Dialog.Root>
         <VisuallyHidden>
           <Dialog.Title>{name}</Dialog.Title>
         </VisuallyHidden>
         <Dialog.Trigger>
           <img
-            onClick={() => setShowDetail(true)}
             src={src}
             alt={name}
-            style={{
-              objectFit: "cover",
-              minHeight: "150px",
-              height: "150px",
-              minWidth: "250px",
-              width: "250px",
-            }}
+            style={{ objectFit: "cover", height: 150, width: "100%" }}
           />
         </Dialog.Trigger>
         <Dialog.Content maxWidth="80vw" maxHeight="80vh">
-          <Flex direction="column">
-            <Text>{name}</Text>
+          <Flex direction="column" gap="3">
+            <Text weight="bold">{name}</Text>
             <img
-              onClick={() => setShowDetail(true)}
               src={src}
               alt={name}
-              style={{
-                objectFit: "cover",
-              }}
+              style={{ objectFit: "contain", maxHeight: "70vh" }}
             />
           </Flex>
         </Dialog.Content>

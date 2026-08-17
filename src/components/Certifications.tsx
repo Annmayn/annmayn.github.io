@@ -1,5 +1,13 @@
-import { Flex, Grid, Text } from "@radix-ui/themes";
 import { useRef } from "react";
+import {
+  Box,
+  Flex,
+  Grid,
+  Heading,
+  IconButton,
+  Section,
+  Text,
+} from "@radix-ui/themes";
 import AiCert from "../assets/certifications/ai.png";
 import CnnCert from "../assets/certifications/cnn.png";
 import DddCert from "../assets/certifications/ddd.png";
@@ -13,85 +21,85 @@ import SentimentAnalysisCert from "../assets/certifications/sentimentAnalysis.pn
 import SequenceModelCert from "../assets/certifications/sequenceModel.png";
 import StructureMlProjectCert from "../assets/certifications/structuringMLProjects.png";
 import TuningCert from "../assets/certifications/tuning.png";
-import LeftArrow from "../assets/leftArrow.svg";
-import RightArrow from "../assets/rightArrow.svg";
-import Arrow from "./Arrow.tsx";
-import CertificateDetail from "./CertificateDetail.tsx";
-import ArrowSVG from "../assets/line9.svg";
+import CertificateDetail from "./CertificateDetail";
+
+const gallery = [
+  { src: AiCert, name: "Artificial Intelligence" },
+  { src: CnnCert, name: "Convolutional Neural Networks" },
+  { src: DddCert, name: "Domain Driven Design" },
+  { src: DlsCert, name: "Deep Learning Specialization" },
+  { src: IntroToMlCert, name: "Intro to Machine Learning" },
+  { src: NnAndDlCert, name: "Neural Networks and Deep Learning" },
+  { src: ProblemSolvingCert, name: "Problem Solving" },
+  { src: ReactiveMicroServiceCert, name: "Reactive Microservice" },
+  { src: ReactiveSystemCert, name: "Reactive Systems" },
+  { src: SentimentAnalysisCert, name: "Sentiment Analysis" },
+  { src: SequenceModelCert, name: "Sequence Models" },
+  { src: StructureMlProjectCert, name: "Structuring ML Projects" },
+  { src: TuningCert, name: "Hyperparameter Tuning" },
+];
 
 export default function Certifications() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const certificates = [
-    { src: AiCert, name: "AI" },
-    { src: CnnCert, name: "CNN" },
-    { src: DddCert, name: "DDD" },
-    { src: DlsCert, name: "Dls" },
-    { src: IntroToMlCert, name: "IntroToMl" },
-    { src: NnAndDlCert, name: "Nn" },
-    { src: ProblemSolvingCert, name: "ProblemSolving" },
-    { src: ReactiveMicroServiceCert, name: "Reactive Microservice" },
-    { src: ReactiveSystemCert, name: "Reactive System" },
-    { src: SentimentAnalysisCert, name: "Sentiment Analysis" },
-    { src: SequenceModelCert, name: "Sequence Model" },
-    { src: StructureMlProjectCert, name: "Structure ML Project" },
-    { src: TuningCert, name: "Tuning ML Models" },
-  ];
+  const trackRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
-    if (!containerRef.current) return;
-    const scrollAmount = 250;
-    containerRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
+    trackRef.current?.scrollBy({
+      left: direction === "left" ? -260 : 260,
       behavior: "smooth",
     });
   };
 
   return (
-    <>
-      <Flex direction={"row"} my={"6"} justify={"center"}>
-        <img src={ArrowSVG} alt={"Arrow"} width={"100px"} />
-      </Flex>
-      <Flex
-        direction={{ initial: "column", sm: "row" }}
-        justify={{ initial: "center", sm: "start" }}
-        align={"center"}
+    <Section aria-labelledby="certs-title" size="1">
+      <Text as="p" className="section-label">
+        Credentials
+      </Text>
+      <Heading as="h2" id="certs-title" className="section-title">
+        Certificates
+      </Heading>
+      <Text
+        as="p"
+        className="muted"
+        style={{ marginTop: "-0.35rem", marginBottom: "1.25rem" }}
       >
-        <Text size={"5"} weight={"bold"}>
-          Certificates I've gathered over the years
-        </Text>
-        <Grid
-          maxWidth={{ initial: "80vw", sm: "50vw" }}
-          justify={"center"}
-          columns={"50px 1fr 50px"}
+        Certificates gathered over the years — ML, AI, and problem solving.
+      </Text>
+
+      <Grid
+        className="cert-rail"
+        columns="40px 1fr 40px"
+        gap="2"
+        align="center"
+      >
+        <IconButton
+          className="cert-nav"
+          type="button"
+          variant="outline"
+          aria-label="Scroll left"
+          onClick={() => scroll("left")}
         >
-          <Arrow
-            src={LeftArrow}
-            onClick={() => scroll("left")}
-            alt={"Left Arrow"}
-          />
-          <Flex
-            direction="row"
-            ref={containerRef}
-            overflowX={"auto"}
-            gapX={{ initial: "0", sm: "2" }}
-            style={{
-              scrollbarWidth: "none",
-            }}
-          >
-            {certificates.map((certificate) => (
+          ‹
+        </IconButton>
+        <Flex className="cert-track" ref={trackRef} gap="3">
+          {gallery.map((certificate) => (
+            <Box key={certificate.name} className="cert-card">
               <CertificateDetail
                 src={certificate.src}
                 name={certificate.name}
               />
-            ))}
-          </Flex>
-          <Arrow
-            src={RightArrow}
-            alt={"Right Arrow"}
-            onClick={() => scroll("right")}
-          />
-        </Grid>
-      </Flex>
-    </>
+            </Box>
+          ))}
+        </Flex>
+        <IconButton
+          className="cert-nav"
+          type="button"
+          variant="outline"
+          aria-label="Scroll right"
+          onClick={() => scroll("right")}
+        >
+          ›
+        </IconButton>
+      </Grid>
+    </Section>
   );
 }
