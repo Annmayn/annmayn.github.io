@@ -7,6 +7,7 @@ import {
   Strong,
   Text,
 } from "@radix-ui/themes";
+import pulchowkCampus from "../assets/pulchowk_campus.jpg";
 import { education } from "../data/portfolio";
 
 export default function School() {
@@ -19,7 +20,12 @@ export default function School() {
         align="center"
       >
         <Flex className="school-visual" align="center" justify="center">
-          <Box>
+          <img
+            className="school-photo"
+            src={pulchowkCampus}
+            alt="IOE Pulchowk Campus, Tribhuvan University"
+          />
+          <Box className="school-photo-caption">
             <Strong>{education.school}</Strong>
             <Text as="span" className="muted">
               {education.years}

@@ -26,6 +26,7 @@ export default function Skills() {
               }}
             >
               <Text
+                weight="bold"
                 style={{
                   backgroundImage: skillTextGradient,
                   WebkitBackgroundClip: "text",

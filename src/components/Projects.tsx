@@ -1,5 +1,6 @@
 import { Grid, Heading, Link, Section, Text } from "@radix-ui/themes";
 import { projects } from "../data/portfolio";
+import DeployRedirect from "./DeployRedirect";
 
 export default function Projects() {
   return (
@@ -12,16 +13,12 @@ export default function Projects() {
           Projects
         </Text>
       </Heading>
-      <Grid
-        className="project-grid"
-        columns={{ initial: "1", sm: "2" }}
-        gap="3"
-      >
+      <Grid className="project-grid" columns="1" gap="3">
         {projects.map((project) => (
           <Link
             key={project.name}
             className="project-card"
-            href={project.url}
+            href={project.github}
             target="_blank"
             rel="noreferrer"
           >
@@ -31,7 +28,17 @@ export default function Projects() {
             <Heading as="h3" size="3">
               {project.name}
             </Heading>
-            <Text as="p">{project.description}</Text>
+            <Text
+              as="p"
+              className={project.url ? "project-card-desc" : undefined}
+            >
+              <span>{project.description}</span>
+              {project.url ? (
+                <DeployRedirect url={project.url} className="project-live-demo">
+                  Live demo
+                </DeployRedirect>
+              ) : null}
+            </Text>
           </Link>
         ))}
       </Grid>

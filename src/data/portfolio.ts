@@ -59,7 +59,7 @@ export const experience = [
     years: "2019 — 2021",
     logo: "raralabs",
     description:
-      "Early career role focused on server-side processing, scripting, and product engineering.",
+      "Early career role focused on server-side processing, scripting, and product engineering. Managed to get the product to production in top 5 banks of Nepal",
   },
   {
     company: "Codavatar Tech",
@@ -67,7 +67,7 @@ export const experience = [
     years: "2021 — 2022",
     logo: "codavatar",
     description:
-      "Worked on VoIP infrastructure, AI-powered communication systems, and enterprise integrations.",
+      "Worked on time series data processing, and enterprise integrations.",
   },
   {
     company: "Promoty",
@@ -75,7 +75,7 @@ export const experience = [
     years: "2022 — 2024",
     logo: "promoty",
     description:
-      "Shipped product features across the stack for an early-stage software company.",
+      "Owned end to end development of the influencer marketing platform. Company exited in 2024.",
   },
   {
     company: "Logicurv",
@@ -83,7 +83,7 @@ export const experience = [
     years: "2022 — 2025",
     logo: "logicurv",
     description:
-      "Consulted on software delivery for product and engineering teams in Kathmandu.",
+      "Consulted on software delivery for product and engineering for a travel booking platform.",
   },
   {
     company: "Houzz",
@@ -91,43 +91,54 @@ export const experience = [
     years: "2024 — Present",
     logo: "houzz",
     description:
-      "Building full-stack features for the home remodeling and improvement platform.",
+      "Building full-stack features for the home remodeling and improvement platform on the documents team.",
   },
 ];
 
-export const projects = [
+export type Project = {
+  name: string;
+  year: string;
+  description: string;
+  github: string;
+  url?: string;
+};
+
+export const projects: Project[] = [
   {
     name: "Dizzy Maze V2",
     year: "2024",
     description: "A rewrite of Dizzy Maze in React, TypeScript, and Tailwind.",
-    url: "https://github.com/Annmayn",
+    github: "https://github.com/Annmayn/dizzy_maze",
+    url: "https://annmayn.github.io/dizzy_maze/",
   },
   {
     name: "HTML2EXCEL",
     year: "2021",
     description: "Parses HTML tables from files and converts them to Excel.",
-    url: "https://github.com/Annmayn/html2excel",
+    github: "https://github.com/Annmayn/html2excel",
+    url: "https://pypi.org/project/html2excel/",
   },
   {
     name: "Automated Attendance System",
     year: "2019",
     description:
       "EigenFace-based attendance system that recognizes faces with minimal intervention.",
-    url: "https://github.com/Annmayn/EigenFace",
+    github: "https://github.com/Annmayn/EigenFace",
   },
   {
     name: "Roster Management",
     year: "2018",
     description:
       "Genetic algorithm that generates routines from constraints and requirements.",
-    url: "https://github.com/Annmayn/Roster-management-using-genetic-algorithm",
+    github:
+      "https://github.com/Annmayn/Roster-management-using-genetic-algorithm",
   },
   {
     name: "Dizzy Maze",
     year: "2017",
     description:
       "Playable maze generated with depth-first search as a search-algorithm demo.",
-    url: "https://github.com/Annmayn/Dizzy-Maze",
+    github: "https://github.com/Annmayn/Dizzy-Maze",
   },
 ];
 

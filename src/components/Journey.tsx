@@ -1,15 +1,16 @@
 import { Box, Flex, Heading, Section, Text } from "@radix-ui/themes";
 import Line2SVG from "../assets/line2.svg";
+import sparkle from "../assets/sparkle.svg";
 import { journey, profile } from "../data/portfolio";
 
 export default function Journey() {
   return (
     <Section aria-labelledby="journey-title" size="1">
-      <Text as="p" className="section-label">
-        Path
-      </Text>
       <Heading as="h2" id="journey-title" className="section-title">
-        My engineering journey
+        <span className="section-title-sparkles">
+          My engineering journey
+          <img className="section-title-sparkle" src={sparkle} alt="" />
+        </span>
       </Heading>
       <Text
         as="p"
