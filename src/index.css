@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -516,6 +518,17 @@ img {
   }
 }
 
+@keyframes live-pulse-mobile {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .cert-track {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -663,13 +676,38 @@ img {
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    touch-action: manipulation;
+    background: var(--bg);
+  }
+
   .portfolio-frame {
-    margin: 0.5rem;
-    border-radius: 14px;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
   }
 
   .portfolio-inner {
-    border-radius: 13px;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .school-visual {
+    transform: none;
+  }
+
+  .live-indicator {
+    animation: live-pulse-mobile 1.6s ease-in-out infinite;
+    box-shadow: none;
   }
 
   .app-shell {
