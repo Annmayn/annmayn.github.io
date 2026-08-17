@@ -35,6 +35,7 @@ export default function Projects() {
               <span>{project.description}</span>
               {project.url ? (
                 <DeployRedirect url={project.url} className="project-live-demo">
+                  <span className="live-indicator" aria-hidden="true" />
                   Live demo
                 </DeployRedirect>
               ) : null}
